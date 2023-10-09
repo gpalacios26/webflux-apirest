@@ -117,7 +117,7 @@ public class ProductoController {
 		}).map(p -> ResponseEntity.ok(p)).defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 
-	@PostMapping("/v2")
+	@PostMapping("/crear")
 	public Mono<ResponseEntity<Producto>> crearConFoto(Producto producto, @RequestPart FilePart file) {
 		if (producto.getCreateAt() == null) {
 			producto.setCreateAt(new Date());
